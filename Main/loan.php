@@ -137,7 +137,7 @@ The above copyright notice and this permission notice shall be included in all c
             </a>
           </li>
 		  <li class="nav-item ">
-            <a class="nav-link" href="./loan.php">
+            <a class="nav-link" href="./guarantor.php">
               <i class="material-icons">library_books</i>
               <p>Create Guarantor</p>
             </a>

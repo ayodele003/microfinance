@@ -84,6 +84,19 @@ The above copyright notice and this permission notice shall be included in all c
 .dropdown:hover .dropbtn {background-color: #3e8e41;}
 </style>
 
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<script>
+  $( function() {
+    $( "#datepicker" ).datepicker();
+  } );
+  
+  $( function() {
+    $( "#datepicker2" ).datepicker();
+  } );
+  </script>
+
 </head>
 
 <body class="">
@@ -105,7 +118,7 @@ The above copyright notice and this permission notice shall be included in all c
               <p>Dashboard</p>
             </a>
           </li>
-          <li class="nav-item active">
+          <li class="nav-item">
             <a class="nav-link" href="./user.php">
               <i class="material-icons">person</i>
               <p>Customer Creation</p>
@@ -124,7 +137,7 @@ The above copyright notice and this permission notice shall be included in all c
             </a>
           </li>
 		  <li class="nav-item ">
-            <a class="nav-link" href="./guarantor.php">
+            <a class="nav-link" href="./loan.php">
               <i class="material-icons">library_books</i>
               <p>Create Guarantor</p>
             </a>
@@ -162,7 +175,7 @@ The above copyright notice and this permission notice shall be included in all c
       <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
         <div class="container-fluid">
           <div class="navbar-wrapper">
-            <a class="navbar-brand" href="javascript:;">Customer Creation</a>
+            <a class="navbar-brand" href="javascript:;">Guarantor Creation</a>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
             <span class="sr-only">Toggle navigation</span>
@@ -179,7 +192,7 @@ The above copyright notice and this permission notice shall be included in all c
             <div class="col-md-12">
               <div class="card">
                 <div class="card-header card-header-primary">
-                  <h4 class="card-title">Personal Details</h4>
+                  <h4 class="card-title">Guarantor Details</h4>
                   <p class="card-category">Complete Your Details</p>
                 </div>
 		<section id="content">
@@ -191,14 +204,11 @@ The above copyright notice and this permission notice shall be included in all c
                                 <a href="#ptab0" class="i-circled i-bordered i-alt divcenter">1</a>
                                 <h5>Personal Details</h5>
                             </li>
-                            <li>
-                                <a href="#ptab1" class="i-circled i-bordered i-alt divcenter">2</a>
-                                <h5>More Personal Details</h5>
-                            </li>
 							<li>
-                                <a href="#ptab2" class="i-circled i-bordered i-alt divcenter">3</a>
-                                <h5>Educational Details</h5>
+                                <a href="#ptab1" class="i-circled i-bordered i-alt divcenter">2</a>
+                                <h5>Contact Details</h5>
                             </li>
+                           
 						</ul>
 						
 						<div class="postcontent nobottommargin clearfix">
@@ -217,7 +227,7 @@ The above copyright notice and this permission notice shall be included in all c
 						
 					</ul>-->	
                 <div class="card-body">
-                  <form action="user.php#ptab1" method="post" >
+                  <form action="guarantor.php#ptab1" method="post" >
                     <div class="row">
                       <!--<div class="col-md-4">
                         <div class="form-group">
@@ -233,85 +243,82 @@ The above copyright notice and this permission notice shall be included in all c
                       </div>-->
                     </div>
                     <div class="row">
-					  <div class="col-md-2">
+					  <div class="col-md-4">
                         <div class="form-group">
                           <label class="bmd-label-floating"><b>Title</b></label>
                          <input type="text" name="title" class="form-control">
                         </div>
                       </div>
+                    </div>
+					 <div class="row">
                       <div class="col-md-3">
                         <div class="form-group">
                           <label class="bmd-label-floating"><b>First Name</b></label>
-                          <input type="text" name="first_name" class="form-control">
-                        </div>
-                      </div>
-                      <div class="col-md-3">
-                        <div class="form-group">
-                          <label class="bmd-label-floating"><b>Middle Name</b></label>
-                          <input type="text" name="middle_name" class="form-control">
+                          <input type="text" name="first_name"  class="form-control">
                         </div>
                       </div>
 					  <div class="col-md-3">
                         <div class="form-group">
-                          <label class="bmd-label-floating"><b>Last Name</b></label>
-                          <input type="text" name="last_name" class="form-control">
+                          <label class="bmd-label-floating"><b>Middle Name</b></label>
+                          <input type="text" name="first_name"  class="form-control">
                         </div>
                       </div>
-                    </div><br>
-                    <div class="row">
-                      <div class="col-md-3">
+					<div class="col-md-3">
+                        <div class="form-group">
+                          <label class="bmd-label-floating"><b>Last Name</b></label>
+                          <input type="text" name="first_name"  class="form-control">
+                        </div>
+                    </div>
+					<div class="col-md-3">
                         <div class="form-group">
                           <label class="bmd-label-floating"><b>Date of Birth</b></label>
-                          <input type="text" name="date_of_birth" class="form-control">
+                          <input type="text" name="date_of_birth" id="datepicker" class="form-control">
                         </div>
                       </div>
+                    </div>
+                    <div class="row">
                       <div class="col-md-3">
                         <div class="form-group">
                           <label class="bmd-label-floating"><b>Gender</b></label>
                           <input type="text" name="gender" class="form-control">
                         </div>
                       </div>
-					  <div class="col-md-3">
+                      <div class="col-md-3">
                         <div class="form-group">
                           <label class="bmd-label-floating"><b>Marital Status</b></label>
+                          <input type="text" name="date_of_birth" class="form-control">
+                        </div>
+                      </div>
+					  <div class="col-md-3">
+                        <div class="form-group">
+                          <label class="bmd-label-floating"><b>BVN</b></label>
                           <input type="text" name="marital_status" class="form-control">
+                        </div>
+                      </div>
+					  <div class="col-md-3">
+                        <div class="form-group">
+                          <label class="bmd-label-floating"><b>NIN Number</b></label>
+                          <input type="email" name="email" class="form-control">
+                        </div>
+                      </div>
+                    </div><br>
+                    <div class="row">
+					  <div class="col-md-3">
+                        <div class="form-group">
+                          <label class="bmd-label-floating"><b>Mobile Number</b></label>
+                          <input type="email" name="email" class="form-control">
+                        </div>
+                      </div>
+					  <div class="col-md-3">
+                        <div class="form-group">
+                          <label class="bmd-label-floating"><b>Whatsapp Number</b></label>
+                          <input type="email" name="email" class="form-control">
                         </div>
                       </div>
 					  <div class="col-md-3">
                         <div class="form-group">
                           <label class="bmd-label-floating"><b>Email</b></label>
                           <input type="email" name="email" class="form-control">
-                        </div>
-                      </div>
-                    </div><br>
-                    <div class="row">
-                      <div class="col-md-4">
-                        <div class="form-group">
-                          <label class="bmd-label-floating"><b>BVN</b></label>
-                          <input type="text" name="bvn" class="form-control">
-                        </div>
-                      </div>
-                      <div class="col-md-4">
-                        <div class="form-group">
-                          <label class="bmd-label-floating"><b>Phone Number</b></label>
-                          <input type="text" name="phone_number" class="form-control">
-                        </div>
-                      </div>
-                      <div class="col-md-4">
-                        <div class="form-group">
-                          <label class="bmd-label-floating"><b>NIN Number</b></label>
-                          <input type="text" name="nin_number" class="form-control">
-                        </div>
-                      </div>
-                    </div><br>
-                    <div class="row">
-                      <div class="col-md-12">
-                        <div class="form-group">
-                          <label><b>Other Bank Details</b></label>
-                          <div class="form-group">
-                            <label class="bmd-label-floating">Bank Details</label>
-                            <textarea class="form-control" name="other_details" rows="5"></textarea>
-                          </div>
                         </div>
                       </div>
                     </div>
@@ -324,11 +331,11 @@ The above copyright notice and this permission notice shall be included in all c
           </div>
         </div>
 		
-		<div class="postcontent nobottommargin clearfix">
+				<div class="postcontent nobottommargin clearfix">
                      <div id="ptab1">							
 					<div class="well well-lg nobottommargin" style="margin-left:30px;">
 					<div class="card-body">
-                  <form action="user.php#ptab2" method="post">
+                  <form action="" method="post">
                     <div class="row">
                       <div class="col-md-6">
                         <div class="form-group">
@@ -364,51 +371,9 @@ The above copyright notice and this permission notice shall be included in all c
 					</div>					
 		</div>
 		
-                     <div id="ptab2">							
-					<div class="well well-lg nobottommargin" style="margin-left:30px;">
-					<div class="card-body">
-                  <form action="" method="post" enctype="application/x-www-form-urlencoded">
-                   	 <div class="row">
-					  <div class="col-md-6">
-                        <div class="form-group">
-                          <label class="bmd-label-floating"><b>Educational Level</b></label>
-                          <!--<input type="text" name="form_date" class="form-control">-->
-						  <select class="form-control">
-							<option ="" class="form-control"></option>
-							<option ="" class="form-control">1</option>
-							<option ="" class="form-control">2</option>
-						  </select>
-                        </div>
-                      </div>
-					  <div class="col-md-6">
-					  <div class="form-group">
-                          <label class="bmd-label-floating"><b>Professional Level</b></label>
-                          <!--<input type="text" name="form_date" class="form-control">-->
-						  <select class="form-control">
-							<option ="" class="form-control"></option>
-							<option ="" class="form-control">1</option>
-							<option ="" class="form-control">2</option>
-						  </select>
-                        </div>
-                      </div>
-					  <div class="col-md-6">
-					  <div class="form-group">
-                          <label class="bmd-label-floating"><b>Financial Status</b></label>
-                          <!--<input type="text" name="form_date" class="form-control">-->
-						  <select class="form-control">
-							<big><option ="" class="form-control"></option></big>
-							<big><option ="" class="form-control">1</option></big>
-							<big><option ="" class="form-control">2</option></big>
-						  </select>
-                        </div>
-                      </div>
-                    </div>
-                    <button type="submit" name="create_cust" class="btn btn-primary pull-right">Create Customer</button>
-                    <div class="clearfix"></div>
-                  </form>
-                </div>
-					</div>
-					</div>					
+		
+		
+                   					
 		</div>
 		
 				
@@ -418,9 +383,10 @@ The above copyright notice and this permission notice shall be included in all c
 	
 	<?php
 			
-if (isset($_POST['create_cust']))
+if (isset($_POST['loan_up']))
 {
-
+	$first2fname = substr();
+	$first2lname = substr();
 
 	$str = '<?xml version="1.0" encoding="UTF-8"?><entrys></entrys>';
 	$xml = simplexml_load_string($str);

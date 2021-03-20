@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <entrys>
   <reports>
-    <form_number>AYBA19930414</form_number>
-    <form_date>03-05-2020</form_date>
-    <first_name>Ayodele</first_name>
-    <middle_name>Oluwatobi</middle_name>
-    <last_name>Bamgboye</last_name>
-    <date_of_birth>14-04-1993</date_of_birth>
-    <gender>MALE</gender>
-    <marital_status>Single</marital_status>
-    <email>ayodele003@gmail.com</email>
-    <bvn>22291502638</bvn>
-    <phone_number>08161793119</phone_number>
-    <nin_number>01123213</nin_number>
-    <other_details>gt</other_details>
+    <form_number/>
+    <form_date/>
+    <first_name/>
+    <middle_name/>
+    <last_name/>
+    <date_of_birth/>
+    <gender/>
+    <marital_status/>
+    <email/>
+    <bvn/>
+    <phone_number/>
+    <nin_number/>
+    <other_details/>
   </reports>
 </entrys>
