@@ -254,25 +254,25 @@ The above copyright notice and this permission notice shall be included in all c
                       <div class="col-md-3">
                         <div class="form-group">
                           <label class="bmd-label-floating"><b>First Name</b></label>
-                          <input type="text" name="first_name"  class="form-control">
+                          <input type="text" name="gfirst_name"  class="form-control">
                         </div>
                       </div>
 					  <div class="col-md-3">
                         <div class="form-group">
                           <label class="bmd-label-floating"><b>Middle Name</b></label>
-                          <input type="text" name="first_name"  class="form-control">
+                          <input type="text" name="gmid_name"  class="form-control">
                         </div>
                       </div>
 					<div class="col-md-3">
                         <div class="form-group">
                           <label class="bmd-label-floating"><b>Last Name</b></label>
-                          <input type="text" name="first_name"  class="form-control">
+                          <input type="text" name="glast_name"  class="form-control">
                         </div>
                     </div>
 					<div class="col-md-3">
                         <div class="form-group">
                           <label class="bmd-label-floating"><b>Date of Birth</b></label>
-                          <input type="text" name="date_of_birth" id="datepicker" class="form-control">
+                          <input type="text" name="gdate_of_birth" id="datepicker" class="form-control">
                         </div>
                       </div>
                     </div>
@@ -280,25 +280,25 @@ The above copyright notice and this permission notice shall be included in all c
                       <div class="col-md-3">
                         <div class="form-group">
                           <label class="bmd-label-floating"><b>Gender</b></label>
-                          <input type="text" name="gender" class="form-control">
+                          <input type="text" name="ggender" class="form-control">
                         </div>
                       </div>
                       <div class="col-md-3">
                         <div class="form-group">
                           <label class="bmd-label-floating"><b>Marital Status</b></label>
-                          <input type="text" name="date_of_birth" class="form-control">
+                          <input type="text" name="gmaritalstatus" class="form-control">
                         </div>
                       </div>
 					  <div class="col-md-3">
                         <div class="form-group">
                           <label class="bmd-label-floating"><b>BVN</b></label>
-                          <input type="text" name="marital_status" class="form-control">
+                          <input type="text" name="gbvn" class="form-control">
                         </div>
                       </div>
 					  <div class="col-md-3">
                         <div class="form-group">
                           <label class="bmd-label-floating"><b>NIN Number</b></label>
-                          <input type="email" name="email" class="form-control">
+                          <input type="text" name="gnin" class="form-control">
                         </div>
                       </div>
                     </div><br>
@@ -306,19 +306,19 @@ The above copyright notice and this permission notice shall be included in all c
 					  <div class="col-md-3">
                         <div class="form-group">
                           <label class="bmd-label-floating"><b>Mobile Number</b></label>
-                          <input type="email" name="email" class="form-control">
+                          <input type="text" name="gmobilenum" class="form-control">
                         </div>
                       </div>
 					  <div class="col-md-3">
                         <div class="form-group">
                           <label class="bmd-label-floating"><b>Whatsapp Number</b></label>
-                          <input type="email" name="email" class="form-control">
+                          <input type="text" name="gwhatsappnim" class="form-control">
                         </div>
                       </div>
 					  <div class="col-md-3">
                         <div class="form-group">
                           <label class="bmd-label-floating"><b>Email</b></label>
-                          <input type="email" name="email" class="form-control">
+                          <input type="email" name="gemail" class="form-control">
                         </div>
                       </div>
                     </div>
@@ -340,13 +340,13 @@ The above copyright notice and this permission notice shall be included in all c
                       <div class="col-md-6">
                         <div class="form-group">
                           <label class="bmd-label-floating"><b>Address</b></label>
-                          <input type="text" name="form_number" class="form-control">
+                          <input type="text" name="gaddress" class="form-control">
                         </div>
                       </div>
                       <div class="col-md-6">
                         <div class="form-group">
                           <label class="bmd-label-floating"><b>Location</b></label>
-                          <input type="text" name="form_date" class="form-control">
+                          <input type="text" name="glocation" class="form-control">
                         </div>
                       </div>
                     </div><br>
@@ -355,7 +355,7 @@ The above copyright notice and this permission notice shall be included in all c
                         <div class="form-group">
                           <label class="bmd-label-floating"><b>State</b></label>
                           <!--<input type="text" name="form_date" class="form-control">-->
-						  <select class="form-control">
+						  <select class="form-control" name="gstate">
 							<option ="" class="form-control"></option>
 							<option ="" class="form-control">Kwara</option>
 							<option ="" class="form-control">Lagos</option>
@@ -363,7 +363,7 @@ The above copyright notice and this permission notice shall be included in all c
                         </div>
                       </div>
                     </div><br>
-                    <button type="submit" name="submit" class="btn btn-primary pull-right">Next</button>
+                    <button type="submit" name="creat_guarantor" class="btn btn-primary pull-right">Next</button>
                     <div class="clearfix"></div>
                   </form>
                 </div>
@@ -383,7 +383,7 @@ The above copyright notice and this permission notice shall be included in all c
 	
 	<?php
 			
-if (isset($_POST['loan_up']))
+if (isset($_POST['creat_guarantor']))
 {
 	$first2fname = substr();
 	$first2lname = substr();

@@ -1,10 +1,10 @@
 <?php
 
-	$conn = oci_connect("SYSTEM","sss2$", "localhost/lasgrepdb");
-/* 	if($conn){
+	$conn = oci_connect("mfbuser","mfbuser2$", "localhost:1539/microfinance");
+/* if($conn){
     echo "success";
   }
   else{
     echo "failed";
-  } */
+  }  */
 ?>

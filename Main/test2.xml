@@ -1,18 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <entrys>
   <reports>
-    <form_number/>
-    <form_date/>
-    <first_name/>
-    <middle_name/>
-    <last_name/>
-    <date_of_birth/>
-    <gender/>
-    <marital_status/>
-    <email/>
-    <bvn/>
-    <phone_number/>
-    <nin_number/>
-    <other_details/>
+    <form_number>MSB-21032021-4855</form_number>
+    <first_name>Ayodele</first_name>
+    <middle_name>Oluwatobi</middle_name>
+    <last_name>Bamgboye</last_name>
+    <date_of_birth>04/14/1993</date_of_birth>
+    <gender>MALE</gender>
+    <marital_status>Single</marital_status>
+    <email>ayodele003@gmail.com</email>
+    <bvn>22524469697</bvn>
+    <phone_number>08161793119</phone_number>
+    <nin_number>01123213</nin_number>
+    <other_details>GT BANK</other_details>
+    <user_address>5, Moore street, Yaba</user_address>
+    <user_location>Yaba</user_location>
+    <user_state>LA</user_state>
+    <user_edu_level>03</user_edu_level>
+    <user_prof_level>05</user_prof_level>
+    <user_fin_level>01</user_fin_level>
   </reports>
 </entrys>

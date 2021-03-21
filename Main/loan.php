@@ -242,7 +242,7 @@ The above copyright notice and this permission notice shall be included in all c
 					  <div class="col-md-4">
                         <div class="form-group">
                           <label class="bmd-label-floating"><b>CIF No</b></label>
-                         <input type="text" name="title" class="form-control">
+                         <input type="text" name="cif_no" class="form-control">
                         </div>
                       </div>
                     </div>
@@ -251,7 +251,7 @@ The above copyright notice and this permission notice shall be included in all c
                         <div class="form-group">
                           <label class="bmd-label-floating"><b>Loan Product</b></label>
                           <!--<input type="text" name="form_date" class="form-control">-->
-						  <select class="form-control">
+						  <select class="form-control" name="loan_product">
 							<option ="" class="form-control"></option>
 							<option ="" class="form-control">Loan 1</option>
 							<option ="" class="form-control">Laon 2</option>
@@ -263,25 +263,25 @@ The above copyright notice and this permission notice shall be included in all c
                       <div class="col-md-3">
                         <div class="form-group">
                           <label class="bmd-label-floating"><b>Start Date</b></label>
-                          <input type="text" name="date_of_birth" id="datepicker" class="form-control">
+                          <input type="text" name="start_date" id="datepicker" class="form-control">
                         </div>
                       </div>
                       <div class="col-md-3">
                         <div class="form-group">
                           <label class="bmd-label-floating"><b>End Date</b></label>
-                          <input type="text" name="date_of_birth" id="datepicker2" class="form-control">
+                          <input type="text" name="end_date" id="datepicker2" class="form-control">
                         </div>
                       </div>
 					  <div class="col-md-3">
                         <div class="form-group">
                           <label class="bmd-label-floating"><b>Loan Amount</b></label>
-                          <input type="text" name="marital_status" class="form-control">
+                          <input type="text" name="loan_amt" class="form-control">
                         </div>
                       </div>
 					  <div class="col-md-3">
                         <div class="form-group">
                           <label class="bmd-label-floating"><b>Tenor</b></label>
-                          <input type="email" name="email" class="form-control">
+                          <input type="tenor" name="tenor" class="form-control">
                         </div>
                       </div>
                     </div><br>
@@ -290,7 +290,7 @@ The above copyright notice and this permission notice shall be included in all c
                         <div class="form-group">
                           <label class="bmd-label-floating"><b>Repayment Type</b></label>
                           <!--<input type="text" name="form_date" class="form-control">-->
-						  <select class="form-control">
+						  <select class="form-control" name="repayment_type">
 							<option ="" class="form-control"></option>
 							<option ="" class="form-control">Loan 1</option>
 							<option ="" class="form-control">Laon 2</option>
@@ -301,7 +301,7 @@ The above copyright notice and this permission notice shall be included in all c
                         <div class="form-group">
                           <label class="bmd-label-floating"><b>Cash Collateral Placement</b></label>
                           <!--<input type="text" name="form_date" class="form-control">-->
-						  <select class="form-control">
+						  <select class="form-control" name="cash_collateral">
 							<option ="" class="form-control"></option>
 							<option ="" class="form-control">Loan 1</option>
 							<option ="" class="form-control">Laon 2</option>
@@ -311,22 +311,14 @@ The above copyright notice and this permission notice shall be included in all c
                     </div>
                     <button type="submit" name="loan_up" class="btn btn-primary pull-right">Next</button>
                     <div class="clearfix"></div>
-                  </form>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-		
-		
-		
-                   					
-		</div>
-		
-				
-		
-		
-      </div>
+				</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>                   					
+		</div>		
+     </div>
 	
 	<?php
 			

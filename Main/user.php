@@ -84,6 +84,20 @@ The above copyright notice and this permission notice shall be included in all c
 .dropdown:hover .dropbtn {background-color: #3e8e41;}
 </style>
 
+
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<script>
+  $( function() {
+    $( "#datepicker" ).datepicker();
+  } );
+  
+  $( function() {
+    $( "#datepicker2" ).datepicker();
+  } );
+  </script>
+
 </head>
 
 <body class="">
@@ -217,6 +231,9 @@ The above copyright notice and this permission notice shall be included in all c
 						
 					</ul>-->	
                 <div class="card-body">
+				<?php
+				//$appid = "2223100";
+				?>
                   <form action="user.php#ptab1" method="post" >
                     <div class="row">
                       <!--<div class="col-md-4">
@@ -262,7 +279,7 @@ The above copyright notice and this permission notice shall be included in all c
                       <div class="col-md-3">
                         <div class="form-group">
                           <label class="bmd-label-floating"><b>Date of Birth</b></label>
-                          <input type="text" name="date_of_birth" class="form-control">
+                          <input type="text" name="date_of_birth" id="datepicker" class="form-control">
                         </div>
                       </div>
                       <div class="col-md-3">
@@ -315,7 +332,7 @@ The above copyright notice and this permission notice shall be included in all c
                         </div>
                       </div>
                     </div>
-                    <button type="submit" name="submit" class="btn btn-primary pull-right">Next</button>
+                    <button type="submit"  class="btn btn-primary pull-right">Next</button>
                     <div class="clearfix"></div>
                   </form>
                 </div>
@@ -325,21 +342,34 @@ The above copyright notice and this permission notice shall be included in all c
         </div>
 		
 		<div class="postcontent nobottommargin clearfix">
-                     <div id="ptab1">							
+                     <div id="ptab1">		
+						
 					<div class="well well-lg nobottommargin" style="margin-left:30px;">
 					<div class="card-body">
                   <form action="user.php#ptab2" method="post">
+				  <input type="text" name="title" value="<?php echo $_POST['title']; ?>">
+						<input type="text" name="first_name" value="<?php echo $_POST['first_name']; ?>">
+						<input type="text" name="middle_name" value="<?php echo $_POST['middle_name']; ?>">
+						<input type="text" name="last_name" value="<?php echo $_POST['last_name']; ?>">
+						<input type="text" name="date_of_birth" value="<?php echo $_POST['date_of_birth']; ?>">
+						<input type="text" name="gender" value="<?php echo $_POST['gender']; ?>">
+						<input type="text" name="marital_status" value="<?php echo $_POST['marital_status']; ?>">
+						<input type="text" name="email" value="<?php echo $_POST['email']; ?>">
+						<input type="text" name="bvn" value="<?php echo $_POST['bvn']; ?>">
+						<input type="text" name="phone_number" value="<?php echo $_POST['phone_number']; ?>">
+						<input type="text" name="nin_number" value="<?php echo $_POST['nin_number']; ?>">
+						<input type="text" name="other_details" value="<?php echo $_POST['other_details']; ?>">
                     <div class="row">
                       <div class="col-md-6">
                         <div class="form-group">
                           <label class="bmd-label-floating"><b>Address</b></label>
-                          <input type="text" name="form_number" class="form-control">
+                          <input type="text" name="user_address" class="form-control">
                         </div>
                       </div>
                       <div class="col-md-6">
                         <div class="form-group">
                           <label class="bmd-label-floating"><b>Location</b></label>
-                          <input type="text" name="form_date" class="form-control">
+                          <input type="text" name="user_location" class="form-control">
                         </div>
                       </div>
                     </div><br>
@@ -348,15 +378,26 @@ The above copyright notice and this permission notice shall be included in all c
                         <div class="form-group">
                           <label class="bmd-label-floating"><b>State</b></label>
                           <!--<input type="text" name="form_date" class="form-control">-->
-						  <select class="form-control">
-							<option ="" class="form-control"></option>
-							<option ="" class="form-control">Kwara</option>
-							<option ="" class="form-control">Lagos</option>
+						<?php
+							require_once('conn.php');
+							$sql = 'SELECT * FROM MFBUSER.STATE_CODES';
+							$stmt = oci_parse($conn,$sql);
+							oci_execute($stmt);
+						?>
+						 <select class="form-control" name="user_state">
+						  <?php
+						  while ($row = oci_fetch_array($stmt, OCI_RETURN_NULLS+OCI_ASSOC))
+							{
+						?>
+							<option value="<?php echo $row['STATE_CODE'] ?>" class="form-control"><?php echo $row['STATE_NAME'];?></option>
+												 <?php
+						  }
+						?>
 						  </select>
                         </div>
                       </div>
                     </div><br>
-                    <button type="submit" name="submit" class="btn btn-primary pull-right">Next</button>
+                    <button type="submit"  class="btn btn-primary pull-right">Next</button>
                     <div class="clearfix"></div>
                   </form>
                 </div>
@@ -364,19 +405,45 @@ The above copyright notice and this permission notice shall be included in all c
 					</div>					
 		</div>
 		
-                     <div id="ptab2">							
+                     <div id="ptab2">
 					<div class="well well-lg nobottommargin" style="margin-left:30px;">
 					<div class="card-body">
-                  <form action="" method="post" enctype="application/x-www-form-urlencoded">
+                  <form action="user.php" method="post">
+						<input type="text" name="title" value="<?php echo $_POST['title']; ?>">
+						<input type="text" name="first_name" value="<?php echo $_POST['first_name']; ?>">
+						<input type="text" name="middle_name" value="<?php echo $_POST['middle_name']; ?>">
+						<input type="text" name="last_name" value="<?php echo $_POST['last_name']; ?>">
+						<input type="text" name="date_of_birth" value="<?php echo $_POST['date_of_birth']; ?>">
+						<input type="text" name="gender" value="<?php echo $_POST['gender']; ?>">
+						<input type="text" name="marital_status" value="<?php echo $_POST['marital_status']; ?>">
+						<input type="text" name="email" value="<?php echo $_POST['email']; ?>">
+						<input type="text" name="bvn" value="<?php echo $_POST['bvn']; ?>">
+						<input type="text" name="phone_number" value="<?php echo $_POST['phone_number']; ?>">
+						<input type="text" name="nin_number" value="<?php echo $_POST['nin_number']; ?>">
+						<input type="text" name="other_details" value="<?php echo $_POST['other_details']; ?>">
+						<input type="text" name="user_address" value="<?php echo $_POST['user_address']; ?>">
+						<input type="text" name="user_location" value="<?php echo $_POST['user_location']; ?>">
+						<input type="text" name="user_state" value="<?php echo $_POST['user_state']; ?>">
                    	 <div class="row">
 					  <div class="col-md-6">
                         <div class="form-group">
                           <label class="bmd-label-floating"><b>Educational Level</b></label>
                           <!--<input type="text" name="form_date" class="form-control">-->
-						  <select class="form-control">
-							<option ="" class="form-control"></option>
-							<option ="" class="form-control">1</option>
-							<option ="" class="form-control">2</option>
+						<?php
+							require_once('conn.php');
+							$sql = 'SELECT * FROM MFBUSER.EDUCATION_TBL_MAINT';
+							$stmt = oci_parse($conn,$sql);
+							oci_execute($stmt);
+						?>
+						 <select class="form-control" name="user_edu_level">
+						  <?php
+						  while ($row = oci_fetch_array($stmt, OCI_RETURN_NULLS+OCI_ASSOC))
+							{
+						?>
+							<option value="<?php echo $row['EDU_CODE'] ?>" class="form-control"><?php echo $row['EDU_NAME'];?></option>
+												 <?php
+						  }
+						?>
 						  </select>
                         </div>
                       </div>
@@ -384,10 +451,21 @@ The above copyright notice and this permission notice shall be included in all c
 					  <div class="form-group">
                           <label class="bmd-label-floating"><b>Professional Level</b></label>
                           <!--<input type="text" name="form_date" class="form-control">-->
-						  <select class="form-control">
-							<option ="" class="form-control"></option>
-							<option ="" class="form-control">1</option>
-							<option ="" class="form-control">2</option>
+						<?php
+							require_once('conn.php');
+							$sql = 'SELECT * FROM MFBUSER.PROFESSIONAL_TBL_MAINT';
+							$stmt = oci_parse($conn,$sql);
+							oci_execute($stmt);
+						?>
+						 <select class="form-control" name="user_prof_level">
+						  <?php
+						  while ($row = oci_fetch_array($stmt, OCI_RETURN_NULLS+OCI_ASSOC))
+							{
+						?>
+							<option value="<?php echo $row['PROF_CODE'] ?>" class="form-control"><?php echo $row['PROF_NAME'];?></option>
+												 <?php
+						  }
+						?>
 						  </select>
                         </div>
                       </div>
@@ -395,10 +473,21 @@ The above copyright notice and this permission notice shall be included in all c
 					  <div class="form-group">
                           <label class="bmd-label-floating"><b>Financial Status</b></label>
                           <!--<input type="text" name="form_date" class="form-control">-->
-						  <select class="form-control">
-							<big><option ="" class="form-control"></option></big>
-							<big><option ="" class="form-control">1</option></big>
-							<big><option ="" class="form-control">2</option></big>
+						<?php
+							require_once('conn.php');
+							$sql = 'SELECT * FROM MFBUSER.FINANCIAL_TBL_MAINT';
+							$stmt = oci_parse($conn,$sql);
+							oci_execute($stmt);
+						?>
+						 <select class="form-control" name="user_fin_level">
+						  <?php
+						  while ($row = oci_fetch_array($stmt, OCI_RETURN_NULLS+OCI_ASSOC))
+							{
+						?>
+							<option value="<?php echo $row['FIN_CODE'] ?>" class="form-control"><?php echo $row['FIN_NAME'];?></option>
+												 <?php
+						  }
+						?>
 						  </select>
                         </div>
                       </div>
@@ -420,13 +509,13 @@ The above copyright notice and this permission notice shall be included in all c
 			
 if (isset($_POST['create_cust']))
 {
-
-
+	//var_dump($_POST);
+	
 	$str = '<?xml version="1.0" encoding="UTF-8"?><entrys></entrys>';
-	$xml = simplexml_load_string($str);
-
-	$form_number = $_POST['form_number'];
-	$form_date = $_POST['form_date'];
+	$xml = simplexml_load_string($str);	
+	$zrefno = mt_rand(11,999999);
+	$form_number = 'MSB-' .date("d") . date("m") . date("Y") .'-'. $zrefno;	
+	//$form_date = $_POST['form_date'];
 	$title = $_POST['title'];
 	$first_name = $_POST['first_name'];
 	$middle_name = $_POST['middle_name'];
@@ -439,10 +528,17 @@ if (isset($_POST['create_cust']))
 	$phone_number = $_POST['phone_number'];
 	$nin_number = $_POST['nin_number'];
 	$other_details = $_POST['other_details'];
+	$user_address = $_POST['user_address'];
+	$user_location = $_POST['user_location'];
+	$user_state = $_POST['user_state'];
+	$user_edu_level = $_POST['user_edu_level'];
+	$user_prof_level = $_POST['user_prof_level'];
+	$user_fin_level = $_POST['user_fin_level'];
+	
 
 
 	$form_number = htmlentities($form_number, ENT_COMPAT, 'UTF-8', false);
-	$form_date = htmlentities($form_date, ENT_COMPAT, 'UTF-8', false);
+	//$form_date = htmlentities($form_date, ENT_COMPAT, 'UTF-8', false);
 	$first_name = htmlentities($first_name, ENT_COMPAT, 'UTF-8', false);
 	$middle_name = htmlentities($middle_name, ENT_COMPAT, 'UTF-8', false);
 	$last_name = htmlentities($last_name, ENT_COMPAT, 'UTF-8', false);
@@ -454,11 +550,17 @@ if (isset($_POST['create_cust']))
 	$phone_number = htmlentities($phone_number, ENT_COMPAT, 'UTF-8', false);
 	$nin_number = htmlentities($nin_number, ENT_COMPAT, 'UTF-8', false);
 	$other_details = htmlentities($other_details, ENT_COMPAT, 'UTF-8', false);
+	$user_address = htmlentities($user_address, ENT_COMPAT, 'UTF-8', false);
+	$user_location = htmlentities($user_location, ENT_COMPAT, 'UTF-8', false);
+	$user_state = htmlentities($user_state, ENT_COMPAT, 'UTF-8', false);
+	$user_edu_level = htmlentities($user_edu_level, ENT_COMPAT, 'UTF-8', false);
+	$user_prof_level = htmlentities($user_prof_level, ENT_COMPAT, 'UTF-8', false);
+	$user_fin_level = htmlentities($user_fin_level, ENT_COMPAT, 'UTF-8', false);
 
 
 	$xml->reports = "";
 	$xml->reports->addChild('form_number', $form_number);
-	$xml->reports->addChild('form_date', $form_date);
+	//$xml->reports->addChild('form_date', $form_date);
 	$xml->reports->addChild('first_name', $first_name);
 	$xml->reports->addChild('middle_name', $middle_name);
 	$xml->reports->addChild('last_name', $last_name);
@@ -470,6 +572,12 @@ if (isset($_POST['create_cust']))
 	$xml->reports->addChild('phone_number', $phone_number);
 	$xml->reports->addChild('nin_number', $nin_number);
 	$xml->reports->addChild('other_details', $other_details);
+	$xml->reports->addChild('user_address', $user_address);
+	$xml->reports->addChild('user_location', $user_location);
+	$xml->reports->addChild('user_state', $user_state);
+	$xml->reports->addChild('user_edu_level', $user_edu_level);
+	$xml->reports->addChild('user_prof_level', $user_prof_level);
+	$xml->reports->addChild('user_fin_level', $user_fin_level);
 
 
 	$doc = new DOMDocument('1.0');
